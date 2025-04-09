@@ -9,8 +9,12 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class FileDB {
+public class FileDB implements Database{
     private File file;
+
+    public FileDB(String storageFile){
+        file = new File(storageFile);
+    }
 
     public List<String> load(String key) {
         try {
@@ -31,10 +35,5 @@ public class FileDB {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    public void setStore(String storageFile) {
-        file = new File(storageFile);
     }
 }
