@@ -11,15 +11,16 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.mikado.ch02.db.Database;
 import org.mikado.ch02.db.FileDB;
 
 public class UI {
     private JFrame frame;
-    private FileDB database;
+    private Database database;
 
-    public UI() {
+    public UI(Database database) {
         frame = new JFrame();
-        database = new FileDB(App.getStorageFile());
+        this.database = database;
     }
 
     public void showLogin() {

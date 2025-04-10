@@ -1,20 +1,14 @@
 package org.mikado.ch02.ui;
 
+import org.mikado.ch02.db.Database;
+import org.mikado.ch02.db.FileDB;
+
 public class App {
 
     private UI ui;
-    private static String storePath;
 
-    public void launch() throws ApplicationException {
-        ui = new UI();
+    public void launch(Database database) throws ApplicationException {
+        ui = new UI(database);
         ui.showLogin();
-    }
-
-    public static String getStorageFile() {
-        return storePath;
-    }
-
-    public static void setStorageFile(String storePath) {
-        App.storePath = storePath;
     }
 }
