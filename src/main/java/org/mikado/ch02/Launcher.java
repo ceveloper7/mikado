@@ -7,7 +7,7 @@ public class Launcher {
 
     public static void main(String[] argv) {
         try {
-            App.setStorageFile("/opt/local/app/db.txt");
+            App.setStorageFile("/home/ceva/opt/local/app/db.txt");
             App app = new App();
             app.launch();
         } catch (ApplicationException e) {
